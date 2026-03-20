@@ -1,18 +1,47 @@
 # Embeddings y datos pesados
 # El .bin está en el límite que permite Github. Si me da problemas lo quito y no lo subo
+# De momento lo subimos pero tenemos 57.83 MB y sólo recomiendan hasta 50 MB. 
+# Más adelante lo quitaremos poniendo un link a google Drive
 # data/*.bin
-data/*.npy
-data/*.vec
 
-# Opcional: otros datos grandes
+# =========================
+# Embeddings y datos grandes
+# =========================
+
+# Archivos pesados en cualquier carpeta
+*.vec
+*.npy
+
+# Mantener .bin SOLO en data (opcional)
+# Si algún día quieres bloquearlos todos, descomenta:
+# *.bin
+
+# =========================
+# Modelos ML
+# =========================
 *.pt
 *.pth
 *.ckpt
 
-# Python cache
+# =========================
+# Python
+# =========================
 __pycache__/
-*.pyc
+*.py[cod]
 
-# Entornos virtuales
+# =========================
+# Entornos
+# =========================
 venv/
 .env
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# OS / basura
+# =========================
+.DS_Store
+Thumbs.db
