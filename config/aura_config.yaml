@@ -1,0 +1,73 @@
+# ==========================================
+# CONFIGURACIÓN GLOBAL DEL SISTEMA NEURONAL
+# ==========================================
+
+model:
+  seed: 42
+  engine:                    # antes: razonador
+    micro_input_threshold: 0.5      # antes: umbral_micro_entrada
+    num_iterations: 10              # antes: num_iteraciones
+    feedback_strength: 0.05         # (se mantiene)
+    macro_neuron_threshold: 0.5     # antes: umbral_macro_neuro
+    macro_initial_transition: 0.1   # antes: transicion_inicial_macro
+    meta_adjust:                    # antes: meta_ajuste
+      window: 10                    # antes: ventana
+      low_threshold: 0.2             # antes: umbral_bajo
+      high_threshold: 0.8            # antes: umbral_alto
+      threshold_adjust: 0.05         # antes: ajuste_umbral
+      decay_adjust: 0.01             # antes: ajuste_decay
+
+  thinking:
+    thinking_memory_threshold: 0.6   # antes: umbral_thinking_memory
+
+  neuron:                           # antes: neuronas
+    use_attention: true              # antes: usar_atencion
+    learning_rate: 0.05              # (se mantiene)
+    lambda_decay: 0.01               # antes: lambda_decaimiento
+    initial_threshold: 0.6           # antes: umbral_inicial
+    initial_decay: 0.25              # antes: decay_inicial
+    min_weight: 0.3                  # antes: peso_min
+    max_weight: 1.0                  # antes: peso_max
+    learning_threshold: 0.85         # antes: umbral_aprendizaje
+    micro_learning_threshold: 0.7    # antes: umbral_micro_aprendizaje
+
+dynamics:                            # antes: dinamica
+  inhibition:                        # antes: inhibicion
+    neuron_factor: 0.5               # antes: neuronas_factor
+    micro_factor: 0.7                # antes: micros_factor
+  decay:                             # antes: decaimiento
+    micro_factor: 0.95               # antes: factor_micro
+    neuron_factor: 0.95              # antes: factor_neurona
+
+activation:                          # antes: activacion
+  function: "sigmoid"                # antes: funcion
+
+learning:                            # antes: aprendizaje
+  scheduler: null
+  grad_clip: null
+  hebbian_enabled: true              # antes: hebbiano_activado
+
+regularization:                      # antes: regularizacion
+  dropout: 0.1
+  activation_noise: 0.01             # antes: ruido_activacion
+
+logging:                             # antes: logging
+  level: "INFO"                      # antes: nivel
+  save_metrics: true                 # antes: guardar_metricas
+  log_path: "logs/"                  # antes: ruta_logs
+
+paths:
+  clustering_state: "data/clustering_state.pkl"
+  fasttext_vectors: "data/cc.es.300.vec"
+
+clustering:
+  cooccurrence_threshold: 0.7        # antes: umbral_coocurrencia
+  context_window: 10                 # antes: ventana_contextos
+  detection_frequency: 20            # antes: frecuencia_deteccion
+  min_words_per_concept: 2           # antes: min_palabras_por_concepto
+
+embeddings:
+  dimension: 300                    # Dimensión de los vectores de FastText
+  use_fasttext: true                # Usar FastText como fuente de embeddings
+  fallback_dimension: 64            # Dimensión por defecto si no se usa FastText
+  normalize: true                   # Normalizar embeddings después de generar

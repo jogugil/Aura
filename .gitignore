@@ -1,0 +1,18 @@
+# Embeddings y datos pesados
+# El .bin está en el límite que permite Github. Si me da problemas lo quito y no lo subo
+# data/*.bin
+data/*.npy
+data/*.vec
+
+# Opcional: otros datos grandes
+*.pt
+*.pth
+*.ckpt
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Entornos virtuales
+venv/
+.env

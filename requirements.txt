@@ -1,0 +1,23 @@
+# requirements.txt
+# Librerías principales para el sistema de arquitectura cognitiva Aura
+
+# PyTorch - Framework principal para tensores y operaciones neuronales
+torch>=2.0.0
+
+# NumPy - Operaciones numéricas complementarias
+numpy>=1.24.0
+
+# Gensim - Para cargar vectores FastText
+gensim>=4.3.0
+
+# PyYAML - Para cargar archivos de configuración
+pyyaml>=6.0
+
+# (Opcional) Para visualización y debugging
+matplotlib>=3.7.0
+
+# (Opcional) Para análisis de datos
+pandas>=2.0.0
+
+# (Opcional) Para logging mejorado
+colorlog>=6.7.0
